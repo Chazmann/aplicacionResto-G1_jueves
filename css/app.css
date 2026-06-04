@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* variables generales (color, tamaños, alturas) */
+:root {
+    --color-primario: #857b2f;
+    --color-secundario: #c1e58e;
+    --texto-color-primario: #fff;
+    --texto-color-secundario: #222;
+    --altura-header: 320px;
+    --fuente-titulos: 'Lucida Sans', sans-serif;
+}
+
+header {
+    height: var(--altura-header);
+    background-color: var(--color-primario);
+    color: var(--texto-color-primario);
+    position: relative;
+}
+
+.degradado {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+}
+
+.bienvenida {
+    position: absolute;
+    left: 10%;
+    bottom: 35px;
+    /* 1em equivale al tamaño de la fuente por default en body, que en este caso es 16px */
+    font-family: var(--fuente-titulos);
+    color: var(--texto-color-primario);
+}
+
+.buscador {
+    position: absolute;
+    bottom: -25px;
+    left: 10%;
+
+    height: 50px;
+    width: 80%;
+    /*margin: auto;  centra el buscador horizontalmente */
+    background-color: white;
+}
+
+.cuadrado-boton {
+    height: 50px;
+    width: 50px;
+    background-color: green;
+}
+
+main {
+    min-height: calc(100dvh - var(--altura-header));
+    background-color: var(--color-secundario);
+    color: var(--texto-color-secundario);
+}
