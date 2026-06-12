@@ -2,16 +2,24 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 /* variables generales (color, tamaños, alturas) */
 :root {
     --color-primario: #857b2f;
+    --color-clarito-primario: #c1b86e;
     --color-secundario: #c1e58e;
     --texto-color-primario: #fff;
     --texto-color-secundario: #222;
-    --altura-header: 320px;
+    --altura-header: 280px;
     --fuente-titulos: 'Lucida Sans', sans-serif;
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -22,7 +30,9 @@ header {
 }
 
 .degradado {
-    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+     background: linear-gradient(135deg, var(--color-primario), var(--color-secundario)); 
+ height: 100%;
+    width: 100%;
 }
 
 .bienvenida {
@@ -35,14 +45,38 @@ header {
 }
 
 .buscador {
+    display: flex;
+    justify-content: space-between;
     position: absolute;
     bottom: -25px;
     left: 10%;
+    box-shadow: 0 6px 26px -3px rgba(0, 0, 0, 0.5);
 
     height: 50px;
     width: 80%;
     /*margin: auto;  centra el buscador horizontalmente */
     background-color: white;
+}
+
+.buscador input[type="text"] {
+    height: 100%;
+    outline: none;
+    border: none;
+    flex: 1;
+    padding: 1em;
+
+}
+
+.btn-buscar {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 50px;
+}
+.btn-buscar:hover{
+    background-color: var(--color-secundario);
+    cursor: pointer;
 }
 
 .cuadrado-boton {
@@ -52,7 +86,39 @@ header {
 }
 
 main {
+    padding-top:3em;
     min-height: calc(100dvh - var(--altura-header));
-    background-color: var(--color-secundario);
+    
     color: var(--texto-color-secundario);
 }
+
+.categorias {
+    padding: 2em 0;
+    background-color: var(--texto-color-primario);
+    display: flex;     gap:2em; /*-----equivale a una separación de 2 caracteres entre cada item, es decir, 32px----- */
+    align-items: center;
+    overflow-x: auto;
+}   
+.item-categoria {
+    flex: 0 0 110px;
+    height: 110px;    display: flex;
+    flex-direction: column;
+    align-items: center;
+        font-size: 1.5em;
+    padding: .5em;
+    color: var(--color-primario);
+    transition: all .25s ease-out;
+    display: grid;
+    place-items: center;
+    
+}
+.item-categoria .fa{font-size:2em}
+
+.item-categoria:hover {
+    background-color: white;
+    box-shadow: 0 6px 26px -3px rgba(0, 0, 0, 0.5);
+    color: var(--color-clarito-primario);
+    transform: scale(1.05);
+    cursor: pointer;
+    border-radius: 3em;
+}   
